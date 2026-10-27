@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amzad Ali's Data Analyst portfolio, skills, projects and contact information.">
+  <title>Amzad Ali | Data Analyst Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --text: #edf2ff;
+      --muted: #a7b3ca;
+      --accent: #67e8c0;
+      --blue: #8ca9ff;
+      --border: #27334b;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 16, 32, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .logo span,
+    .accent {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 85px;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow,
+    .section-label {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.12;
+      margin: 18px 0;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1.25;
+      margin: 12px 0;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 17px;
+    }
+
+    .buttons,
+    .contact-links,
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn  {
+    
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+      padding: 11px 18px;
+      font-weight: 700;
+      color: var(--accent);
+      background: transparent;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #07131b;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .profile-card {
+      padding: 30px;
+      background: linear-gradient(145deg, #182440, #101727);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    /* Updated only for the profile photo */
+    .avatar {
+      width: 120px;
+      height: 120px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+
+    .profile-card p {
+      margin: 5px 0;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card,
+    .contact-box {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 22px;
+      margin-top: 25px;
+    }
+
+    #contact form {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    #contact label {
+      color: var(--text);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    #contact input,
+    #contact textarea {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    #contact textarea {
+      resize: vertical;
+    }
+
+    #contact button {
+      justify-self: start;
+      margin-top: 12px;
+    }
+
+    .note {
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 65px 0;
+      }
+
+      .hero-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Amzad<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">HELLO, I'M AMZAD ALI</div>
+          <h1>Aspiring <span class="accent">Data Analyst</span></h1>
+
+          <p>
+            I am a Computer Science Engineering student passionate about
+            data analytics, visualization, and turning data into meaningful
+            insights that support better decisions.
+          </p>
+
+          <div class="buttons">
+            <a class="btn primary" href="#projects">Explore My Projects</a>
+            <a class="btn" href="#contact">Send Me a Message</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <!-- Photo added in place of AA -->
+          <img src="amzad.2dp-Photoroom.png" alt="Amzad Ali" class="avatar">
+
+          <h2>Amzad Ali</h2>
+          <p>Data Analytics | Python | SQL | Power BI</p>
+          <p>Lucknow, Uttar Pradesh, India</p>
+          <p>Open to entry-level opportunities</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-label">ABOUT ME</div>
+        <h2>A Little About My Journey</h2>
+
+        <div class="section-intro">
+          <p>
+            I am currently pursuing my B.Tech in Computer Science Engineering
+            from Dr. A.P.J. Abdul Kalam Technical University, Lucknow, and I
+            am in my fourth year.
+          </p>
+
+          <p>
+            I enjoy working with data, exploring patterns, building dashboards,
+            and communicating findings clearly. I am developing my practical
+            skills through hands-on analytics projects and continuous learning.
+            My long-term goal is to grow into a Data Scientist.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">MY TOOLKIT</div>
+        <h2>Skills & Technologies</h2>
+        <p>Tools I practise for data analysis and visualization.</p>
+
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Microsoft Excel</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">NumPy</span>
+          <span class="skill">Matplotlib</span>
+          <span class="skill">Exploratory Data Analysis</span>
+          <span class="skill">Data Visualization</span>
+          <span class="skill">Data Cleaning</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">MY WORK</div>
+        <h2>Featured Projects</h2>
+
+        <p class="section-intro">
+          Practical projects where I explore datasets, identify trends,
+          and present findings through analysis and dashboards.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <span class="tag">POWER BI · HR ANALYTICS</span>
+            <h3>HR Analytics Dashboard</h3>
+            <p>
+              An interactive dashboard exploring employee headcount,
+              attrition rate, active employees, and workforce trends.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">POWER BI · SALES</span>
+            <h3>Superstore Sales Dashboard</h3>
+            <p>
+              Sales performance analysis across products, regions,
+              categories, profit, and shipping methods.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">PYTHON · EDA</span>
+            <h3>Netflix Data Analysis</h3>
+            <p>
+              Exploratory data analysis using Python, Pandas, NumPy,
+              and Matplotlib to explore content trends.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="note">
+          Replace the GitHub Profile links above with the direct links to
+          each project's repository when available.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-label">EDUCATION</div>
+        <h2>My Education</h2>
+
+        <div class="timeline">
+          <h3>B.Tech — Computer Science Engineering</h3>
+          <p>Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
+          <p>Currently pursuing · Fourth year</p>
+        </div>
+
+        <div class="timeline">
+          <h3>Class XII</h3>
+          <p>Bihar School Examination Board (BSEB)</p>
+        </div>
+
+        <div class="timeline">
+          <h3>Class X</h3>
+          <p>Bihar School Examination Board (BSEB)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <div class="container">
+        <div class="contact-box">
+          <div class="section-label">MY RESUME</div>
+          <h2>Want to Know More?</h2>
+          <p>
+            View my resume for more information about my education,
+            skills, projects, and experience.
+          </p>
+
+          <a class="btn primary" href="resume.pdf"
+             target="_blank" rel="noopener">
+            View / Download Resume
+          </a>
+
+          <p class="note">
+            Upload your PDF resume to this repository using the filename
+            resume.pdf for this button to work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / MESSAGE FORM -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-label">GET IN TOUCH</div>
+        <h2>Have a Question? Send Me a Message</h2>
+
+        <p class="section-intro">
+          Want to know more about my projects, skills, or career opportunities?
+          Send me a message using the form below.
+        </p>
+
+        <div class="contact-box">
+          <!-- Replace YOUR_FORM_ID after creating a form on Formspree -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Your Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              autocomplete="name"
+              required
+            >
+
+            <label for="email">Your Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            >
+
+            <label for="subject">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="What is your message about?"
+              required
+            >
+
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+
+            <button class="btn primary" type="submit">
+              Send Message
+            </button>
+          </form>
+
+          <p class="note">
+            The message form will work after you connect a real Formspree
+            form endpoint. Do not leave YOUR_FORM_ID unchanged.
+          </p>
+
+          <div class="contact-links">
+            <a class="btn"
+               href="https://github.com/amzad-ali77"
+               target="_blank" rel="noopener">GitHub ↗</a>
+
+            <a class="btn"
+               href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
+               target="_blank" rel="noopener">LinkedIn ↗</a>
+
+            <!-- Replace with your real professional email -->
+            <a class="btn" href="mailto:YOUR-EMAIL@example.com">
+              Email Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Amzad Ali · Personal Portfolio
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
