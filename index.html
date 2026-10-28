@@ -72,12 +72,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      
     }
 
     .nav-links a {
       color: var(--muted);
       font-size: 14px;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
@@ -144,8 +144,7 @@
       margin-top: 24px;
     }
 
-    .btn  {
-    
+    .btn {
       display: inline-block;
       border: 1px solid var(--accent);
       border-radius: 9px;
@@ -155,6 +154,7 @@
       background: transparent;
       cursor: pointer;
       font-size: 14px;
+      transition: all 0.3s ease;
     }
 
     .btn.primary {
@@ -163,7 +163,9 @@
     }
 
     .btn:hover {
-      opacity: 0.85;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(103, 232, 192, 0.15);
+      opacity: 0.9;
     }
 
     .profile-card {
@@ -172,9 +174,14 @@
       border: 1px solid var(--border);
       border-radius: 22px;
       text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    /* Updated only for the profile photo */
+    .profile-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
     .avatar {
       width: 120px;
       height: 120px;
@@ -183,6 +190,11 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
     }
 
     .profile-card p {
@@ -207,6 +219,13 @@
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 15px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover,
+    .contact-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
     }
 
     .card p {
@@ -224,6 +243,11 @@
     .project-links a {
       color: var(--accent);
       font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--blue);
     }
 
     .skills {
@@ -238,12 +262,34 @@
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .skill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
     }
 
     .timeline {
       border-left: 2px solid var(--accent);
       padding-left: 22px;
       margin-top: 25px;
+    }
+
+    .timeline p {
+      margin: 5px 0;
+    }
+
+    .percentage {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 12px;
+      border: 1px solid var(--accent);
+      border-radius: 7px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
     }
 
     #contact form {
@@ -267,6 +313,7 @@
       background: var(--bg);
       color: var(--text);
       font: inherit;
+      transition: border-color 0.3s ease;
     }
 
     #contact input:focus,
@@ -360,8 +407,9 @@
         </div>
 
         <div class="profile-card">
-          <!-- Photo added in place of AA -->
-          <img src="amzad.2dp-Photoroom.png" alt="Amzad Ali" class="avatar">
+          <img src="amzad.2dp-Photoroom.png"
+               alt="Amzad Ali"
+               class="avatar">
 
           <h2>Amzad Ali</h2>
           <p>Data Analytics | Python | SQL | Power BI</p>
@@ -488,13 +536,15 @@
         </div>
 
         <div class="timeline">
-          <h3>Class XII</h3>
+          <h3>Class XII (12th)</h3>
           <p>Bihar School Examination Board (BSEB)</p>
+          <span class="percentage">Percentage: 62.8%</span>
         </div>
 
         <div class="timeline">
-          <h3>Class X</h3>
+          <h3>Class X (10th)</h3>
           <p>Bihar School Examination Board (BSEB)</p>
+          <span class="percentage">Percentage: 70.4%</span>
         </div>
       </div>
     </section>
@@ -510,8 +560,10 @@
             skills, projects, and experience.
           </p>
 
-          <a class="btn primary" href="resume.pdf"
-             target="_blank" rel="noopener">
+          <a class="btn primary"
+             href="resume.pdf"
+             target="_blank"
+             rel="noopener">
             View / Download Resume
           </a>
 
@@ -535,7 +587,6 @@
         </p>
 
         <div class="contact-box">
-          <!-- Replace YOUR_FORM_ID after creating a form on Formspree -->
           <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <label for="name">Your Name</label>
             <input
@@ -582,22 +633,24 @@
 
           <p class="note">
             The message form will work after you connect a real Formspree
-            form endpoint. Do not leave YOUR_FORM_ID unchanged.
+            form endpoint. Replace YOUR_FORM_ID with your actual form ID.
           </p>
 
           <div class="contact-links">
             <a class="btn"
                href="https://github.com/amzad-ali77"
-               target="_blank" rel="noopener">GitHub ↗</a>
+               target="_blank"
+               rel="noopener">GitHub ↗</a>
 
             <a class="btn"
                href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
-               target="_blank" rel="noopener">LinkedIn ↗</a>
+               target="_blank"
+               rel="noopener">LinkedIn ↗</a>
 
-            <!-- Replace with your real professional email -->
-            <a class="btn" href="mailto:YOUR-EMAIL@example.com">
-              Email Me
-            </a>
+            <a class="btn"
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
+               target="_blank"
+               rel="noopener">Email Me ↗</a>
           </div>
         </div>
       </div>
