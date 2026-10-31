@@ -4,33 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Amzad Ali's Data Analyst portfolio, skills, projects and contact information.">
-  <meta name="google-site-verification" content="aVXDwkZe2Mz5tTTRbJU0vCWvxomBjVLxctSIGAJxX7w" />
+  <meta name="google-site-verification" content="aVXDwkZe2Mz5tTTRbJU0vCWvxomBjVLxctSIGAJxX7w">
+
+  <meta name="theme-color" content="#090817">
   <title>Amzad Ali | Data Analyst Portfolio</title>
- <link rel="icon" type="image/png" href="favicon.png">
-  
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121a2e;
-      --text: #edf2ff;
-      --muted: #a7b3ca;
-      --accent: #67e8c0;
-      --blue: #8ca9ff;
-      --border: #27334b;
+      --bg: #090817;
+      --panel: #15122b;
+      --panel2: #1c1836;
+      --text: #f8f5ff;
+      --muted: #b9b1d0;
+      --accent: #c5a3ff;
+      --gold: #e2c17b;
+      --border: rgba(197,163,255,0.22);
+      --shadow: 0 15px 45px rgba(0,0,0,0.25);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(114,75,180,.15), transparent 30%),
+        radial-gradient(circle at 90% 45%, rgba(226,193,123,.07), transparent 30%),
+        var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
@@ -39,21 +54,33 @@
     }
 
     .container {
-      width: min(1080px, 90%);
+      width: min(1100px, 90%);
       margin: auto;
     }
 
+    /* SCROLL PROGRESS */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+      z-index: 1000;
+    }
+
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(11, 16, 32, 0.96);
+      z-index: 100;
+      background: rgba(9,8,23,.88);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(18px);
     }
 
     nav {
-      min-height: 72px;
+      min-height: 75px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -61,75 +88,117 @@
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 1px;
     }
 
     .logo span,
     .accent {
-      color: var(--accent);
+      color: var(--gold);
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 22px;
     }
 
     .nav-links a {
       color: var(--muted);
       font-size: 14px;
-      transition: color 0.3s ease;
+      transition: .3s;
+      position: relative;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width .3s;
     }
 
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* GENERAL SECTIONS */
     section {
-      padding: 76px 0;
-      scroll-margin-top: 85px;
+      padding: 95px 0;
+      scroll-margin-top: 75px;
+      position: relative;
     }
 
+    .section-label {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      margin: 18px 0;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      margin: 12px 0 20px;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    /* HERO */
     .hero {
-      min-height: 78vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
+      padding: 80px 0;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
       align-items: center;
-      gap: 48px;
+      gap: 55px;
     }
 
-    .eyebrow,
-    .section-label {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 2px;
+    .eyebrow {
+      color: var(--gold);
       font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: bold;
     }
 
-    h1 {
-      font-size: clamp(40px, 6vw, 66px);
-      line-height: 1.12;
-      margin: 18px 0;
-    }
-
-    h2 {
-      font-size: clamp(27px, 4vw, 36px);
-      line-height: 1.25;
-      margin: 12px 0;
-    }
-
-    h3 {
-      margin-top: 0;
-    }
-
-    p {
-      color: var(--muted);
+    .hero h1 .accent {
+      background: linear-gradient(90deg, #e2c17b, #c5a3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero p {
@@ -141,93 +210,97 @@
     .contact-links,
     .project-links {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 24px;
+      gap: 13px;
+      margin-top: 27px;
     }
 
+    /* BUTTONS */
     .btn {
       display: inline-block;
-      border: 1px solid var(--accent);
-      border-radius: 9px;
-      padding: 11px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      padding: 12px 19px;
       font-weight: 700;
-      color: var(--accent);
+      font-size: 14px;
+      color: var(--gold);
       background: transparent;
       cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s ease;
+      transition: .35s ease;
     }
 
     .btn.primary {
-      background: var(--accent);
-      color: #07131b;
+      color: #171023;
+      background: linear-gradient(120deg, var(--gold), #f1dca7);
+      border-color: var(--gold);
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(103, 232, 192, 0.15);
-      opacity: 0.9;
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 10px 28px rgba(226,193,123,.2);
     }
 
+    /* PROFILE */
     .profile-card {
-      padding: 30px;
-      background: linear-gradient(145deg, #182440, #101727);
+      padding: 32px 25px;
+      background: linear-gradient(145deg, #211a3e, #121025);
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 24px;
       text-align: center;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      box-shadow: var(--shadow);
+      animation: floatCard 4s ease-in-out infinite;
+      transition: .4s;
     }
 
     .profile-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
+      border-color: var(--gold);
+      box-shadow: 0 20px 55px rgba(197,163,255,.15);
     }
 
     .avatar {
-      width: 120px;
-      height: 120px;
+      width: 145px;
+      height: 145px;
       display: block;
       margin: 0 auto 20px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--accent);
-      transition: transform 0.3s ease;
-    }
-
-    .avatar:hover {
-      transform: scale(1.05);
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 28px rgba(226,193,123,.2);
     }
 
     .profile-card p {
-      margin: 5px 0;
+      margin: 6px 0;
+      font-size: 14px;
     }
 
-    .section-intro {
-      max-width: 700px;
-      margin-bottom: 30px;
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 28px;
+      gap: 22px;
+      margin-top: 30px;
     }
 
     .card,
     .contact-box {
-      padding: 25px;
-      background: var(--panel);
+      padding: 28px;
+      background: linear-gradient(145deg, var(--panel2), var(--panel));
       border: 1px solid var(--border);
-      border-radius: 15px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
     }
 
     .card:hover,
     .contact-box:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
+      transform: translateY(-9px);
+      border-color: var(--gold);
+      box-shadow: 0 18px 45px rgba(197,163,255,.12);
     }
 
     .card p {
@@ -236,47 +309,70 @@
 
     .tag {
       display: inline-block;
-      color: var(--accent);
-      font-size: 12px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      font-weight: bold;
     }
 
     .project-links a {
-      color: var(--accent);
+      color: var(--gold);
       font-size: 14px;
-      transition: color 0.3s ease;
+      transition: .3s;
     }
 
     .project-links a:hover {
-      color: var(--blue);
+      color: var(--accent);
     }
 
+    /* SKILLS */
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
+      gap: 14px;
+      margin-top: 28px;
     }
 
     .skill {
-      padding: 9px 15px;
+      padding: 11px 18px;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      transition: .35s;
+      color: var(--text);
     }
 
     .skill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-3px);
+      transform: translateY(-6px);
+      color: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 8px 25px rgba(226,193,123,.12);
     }
 
+    /* EDUCATION */
     .timeline {
-      border-left: 2px solid var(--accent);
-      padding-left: 22px;
-      margin-top: 25px;
+      border-left: 2px solid var(--gold);
+      padding: 5px 0 8px 25px;
+      margin: 28px 0;
+      position: relative;
+      transition: .4s;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 15px rgba(226,193,123,.6);
+    }
+
+    .timeline:hover {
+      transform: translateX(9px);
     }
 
     .timeline p {
@@ -286,14 +382,15 @@
     .percentage {
       display: inline-block;
       margin-top: 8px;
-      padding: 5px 12px;
-      border: 1px solid var(--accent);
-      border-radius: 7px;
-      color: var(--accent);
-      font-weight: 700;
+      padding: 5px 13px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--gold);
+      font-weight: bold;
       font-size: 14px;
     }
 
+    /* CONTACT FORM */
     #contact form {
       display: grid;
       gap: 12px;
@@ -309,18 +406,20 @@
     #contact input,
     #contact textarea {
       width: 100%;
-      padding: 13px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 9px;
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: #0d0b1c;
       color: var(--text);
       font: inherit;
-      transition: border-color 0.3s ease;
+      transition: .3s;
     }
 
     #contact input:focus,
     #contact textarea:focus {
-      outline: 2px solid var(--accent);
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(226,193,123,.12);
     }
 
     #contact textarea {
@@ -334,25 +433,114 @@
 
     .note {
       font-size: 13px;
+      margin-top: 15px;
     }
 
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(65px) scale(.97);
+      filter: blur(5px);
+      transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.8,.2,1),
+        filter .9s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-75px);
+      filter: blur(4px);
+      transition: .9s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(75px);
+      filter: blur(4px);
+      transition: .9s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .reveal-left.show,
+    .reveal-right.show {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    .card:nth-child(2) { transition-delay: .12s; }
+    .card:nth-child(3) { transition-delay: .24s; }
+
+    .skill {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .skill.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding: 25px 0;
+      padding: 28px 0;
       text-align: center;
       color: var(--muted);
       font-size: 13px;
     }
 
+    /* BACK TO TOP */
+    #backToTop {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--panel2);
+      color: var(--gold);
+      font-size: 22px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition: .3s;
+      z-index: 99;
+    }
+
+    #backToTop.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #backToTop:hover {
+      background: var(--gold);
+      color: #171023;
+    }
+
+    /* MOBILE */
     @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
-        padding: 16px 0;
+        padding: 15px 0;
       }
 
       .nav-links {
         gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
       }
 
       .hero {
@@ -365,14 +553,47 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-grid {
+        gap: 35px;
+      }
+
       section {
-        padding: 55px 0;
+        padding: 65px 0;
+      }
+
+      .profile-card {
+        animation: none;
+      }
+
+      .card {
+        transition-delay: 0s !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal,
+      .reveal-left,
+      .reveal-right,
+      .skill {
+        opacity: 1;
+        transform: none;
+        filter: none;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <header>
     <nav class="container">
       <a class="logo" href="#home">Amzad<span>.</span></a>
@@ -389,12 +610,17 @@
   </header>
 
   <main>
+
     <!-- HOME -->
     <section class="hero" id="home">
       <div class="container hero-grid">
-        <div>
+
+        <div class="hero-content">
           <div class="eyebrow">HELLO, I'M AMZAD ALI</div>
-          <h1>Aspiring <span class="accent">Data Analyst</span></h1>
+
+          <h1>
+            Aspiring <span class="accent">Data Analyst</span>
+          </h1>
 
           <p>
             I am a Computer Science Engineering student passionate about
@@ -418,12 +644,13 @@
           <p>Lucknow, Uttar Pradesh, India</p>
           <p>Open to entry-level opportunities</p>
         </div>
+
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-      <div class="container">
+      <div class="container reveal">
         <div class="section-label">ABOUT ME</div>
         <h2>A Little About My Journey</h2>
 
@@ -446,7 +673,7 @@
 
     <!-- SKILLS -->
     <section id="skills">
-      <div class="container">
+      <div class="container reveal">
         <div class="section-label">MY TOOLKIT</div>
         <h2>Skills & Technologies</h2>
         <p>Tools I practise for data analysis and visualization.</p>
@@ -468,7 +695,7 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-      <div class="container">
+      <div class="container reveal">
         <div class="section-label">MY WORK</div>
         <h2>Featured Projects</h2>
 
@@ -478,6 +705,7 @@
         </p>
 
         <div class="cards">
+
           <article class="card">
             <span class="tag">POWER BI · HR ANALYTICS</span>
             <h3>HR Analytics Dashboard</h3>
@@ -516,6 +744,7 @@
                  target="_blank" rel="noopener">GitHub Profile ↗</a>
             </div>
           </article>
+
         </div>
 
         <p class="note">
@@ -527,7 +756,7 @@
 
     <!-- EDUCATION -->
     <section id="education">
-      <div class="container">
+      <div class="container reveal">
         <div class="section-label">EDUCATION</div>
         <h2>My Education</h2>
 
@@ -553,37 +782,34 @@
 
     <!-- RESUME -->
     <section id="resume">
-      <div class="container">
+      <div class="container reveal">
         <div class="contact-box">
           <div class="section-label">MY RESUME</div>
           <h2>Want to Know More?</h2>
+
           <p>
             View my resume for more information about my education,
             skills, projects, and experience.
           </p>
 
           <a class="btn primary"
-             href="Amzad-Ali-Resume.pdf"
+             href="Data_analytics (2).pdf"
              target="_blank"
              rel="noopener">
             View / Download Resume
           </a>
 
-
-          
           <p class="note">
-            Upload your PDF resume to this repository using the filename
-            resume.pdf for this button to work.
+            Keep your PDF resume in this repository with the filename
+            Amzad-Ali-Resume.pdf.
           </p>
         </div>
       </div>
     </section>
 
-
-    
-    <!-- CONTACT / MESSAGE FORM -->
+    <!-- CONTACT -->
     <section id="contact">
-      <div class="container">
+      <div class="container reveal">
         <div class="section-label">GET IN TOUCH</div>
         <h2>Have a Question? Send Me a Message</h2>
 
@@ -593,7 +819,9 @@
         </p>
 
         <div class="contact-box">
-          <form action="https://formspree.io/f/moeenaqz" method="POST">
+
+         <form action="https://formspree.io/f/moeenaqz" method="POST">
+
             <label for="name">Your Name</label>
             <input
               id="name"
@@ -635,14 +863,15 @@
             <button class="btn primary" type="submit">
               Send Message
             </button>
+
           </form>
 
           <p class="note">
-            The message form will work after you connect a real Formspree
-            form endpoint. Replace YOUR_FORM_ID with your actual form ID.
+            Messages are submitted through your Formspree form endpoint.
           </p>
 
           <div class="contact-links">
+
             <a class="btn"
                href="https://github.com/amzad-ali77"
                target="_blank"
@@ -652,21 +881,22 @@
                href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
                target="_blank"
                rel="noopener">LinkedIn ↗</a>
-            
-             <a class="btn"
+
+            <a class="btn"
                href="https://www.instagram.com/amzad__ali07/"
                target="_blank"
-               rel="noopener">Instagram↗</a>
+               rel="noopener">Instagram ↗</a>
 
             <a class="btn"
                href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
                target="_blank"
                rel="noopener">Email Me ↗</a>
-           
+
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -675,9 +905,85 @@
     </div>
   </footer>
 
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
   <script>
+    // Automatic current year
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right, .skill"
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -45px 0px"
+    });
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    // Scroll progress bar and back to top
+    const progress = document.getElementById("scrollProgress");
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const percentage = scrollable > 0
+        ? (window.scrollY / scrollable) * 100
+        : 0;
+
+      progress.style.width = percentage + "%";
+
+      if (window.scrollY > 400) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    // Back to top click
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // Highlight active navigation link
+    const pageSections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
+        }
+      });
+    }, {
+      rootMargin: "-35% 0px -55% 0px"
+    });
+
+    pageSections.forEach((section) => {
+      sectionObserver.observe(section);
+    });
   </script>
+
 </body>
 </html>
