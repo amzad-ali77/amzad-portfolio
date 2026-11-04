@@ -1,16 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Amzad Ali's Data Analyst portfolio, skills, projects and contact information.">
   <meta name="google-site-verification" content="aVXDwkZe2Mz5tTTRbJU0vCWvxomBjVLxctSIGAJxX7w">
   <meta name="theme-color" content="#090817">
-
   <link rel="icon" type="image/png" href="favicon.png">
-
   <title>Amzad Ali | Data Analyst Portfolio</title>
 
   <style>
@@ -22,8 +18,8 @@
       --muted: #b9b1d0;
       --accent: #c5a3ff;
       --gold: #e2c17b;
-      --border: rgba(197,163,255,0.22);
-      --shadow: 0 15px 45px rgba(0,0,0,0.25);
+      --border: rgba(197,163,255,.22);
+      --shadow: 0 15px 45px rgba(0,0,0,.25);
     }
 
     * {
@@ -58,8 +54,6 @@
       margin: auto;
     }
 
-    /* SCROLL PROGRESS */
-
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -76,7 +70,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9,8,23,.94);
+      background: rgba(9,8,23,.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(18px);
     }
@@ -139,7 +133,7 @@
 
     section {
       padding: 72px 0;
-      scroll-margin-top: 75px;
+      scroll-margin-top: 85px;
       position: relative;
     }
 
@@ -471,12 +465,12 @@
       margin-top: 20px;
     }
 
-    /* REVEAL ANIMATIONS */
+    /* ANIMATIONS */
 
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
     }
 
     .reveal.show {
@@ -547,10 +541,6 @@
     /* TABLET */
 
     @media (max-width: 900px) {
-      .hero-grid {
-        gap: 25px;
-      }
-
       .cards {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -560,23 +550,23 @@
       }
     }
 
-    /* MOBILE */
+    /* MOBILE AND TABLET FIX */
 
-    @media (max-width: 760px) {
-
+    @media (max-width: 1100px) {
       html {
-        scroll-padding-top: 125px;
+        scroll-padding-top: 110px;
       }
 
       .container {
-        width: 91%;
+        width: 90%;
       }
 
       nav {
-        align-items: center;
+        min-height: auto;
         flex-direction: column;
-        gap: 9px;
-        padding: 11px 0 13px;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 0 12px;
       }
 
       .logo {
@@ -585,33 +575,39 @@
 
       .nav-links {
         justify-content: center;
-        gap: 9px 16px;
+        gap: 8px 16px;
       }
 
       .nav-links a {
         font-size: 12px;
       }
 
-      .nav-links a::after {
-        bottom: -3px;
-      }
-
-      section {
-        padding: 39px 0;
-      }
-
       .hero {
-        min-height: auto;
-        padding: 43px 0 35px;
+        min-height: 0;
+        height: auto;
+        padding: 35px 0 28px;
+        display: block;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 24px;
+        max-width: 680px;
       }
 
       .hero-content {
         text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 7vw, 48px);
+        margin: 10px 0;
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin: auto;
+        font-size: 14px;
       }
 
       .eyebrow {
@@ -619,43 +615,24 @@
         letter-spacing: 2px;
       }
 
-      h1 {
-        font-size: clamp(35px, 9vw, 46px);
-        margin: 11px 0;
-      }
-
-      h2 {
-        font-size: 27px;
-        margin: 8px 0 13px;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
       .buttons {
         justify-content: center;
+        margin-top: 16px;
         gap: 9px;
-        margin-top: 17px;
-      }
-
-      .btn {
-        padding: 10px 14px;
-        font-size: 12px;
       }
 
       .profile-card {
-        padding: 21px 17px;
-        animation: none;
-        max-width: 340px;
         width: 100%;
-        margin: auto;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 20px 17px;
+        animation: none;
       }
 
       .avatar {
-        width: 115px;
-        height: 115px;
-        margin-bottom: 11px;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 10px;
       }
 
       .profile-card h2 {
@@ -666,46 +643,30 @@
         font-size: 12px;
       }
 
+      section {
+        padding: 43px 0;
+      }
+
       .section-label {
         font-size: 10px;
         letter-spacing: 2px;
-        margin-bottom: 7px;
       }
 
       .section-intro {
         margin-bottom: 17px;
       }
 
-      .section-intro p {
-        margin-bottom: 9px;
-      }
-
       .cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 13px;
-        margin-top: 17px;
       }
 
       .card {
-        padding: 20px;
-      }
-
-      .card:hover,
-      .contact-box:hover {
-        transform: translateY(-3px);
-      }
-
-      .card p {
-        font-size: 13px;
-      }
-
-      .tag {
-        margin-bottom: 8px;
+        padding: 19px;
       }
 
       .skills {
         gap: 8px;
-        margin-top: 17px;
       }
 
       .skill {
@@ -713,38 +674,101 @@
         font-size: 12px;
       }
 
+      .contact-box {
+        padding: 20px;
+      }
+    }
+
+    /* SMALL MOBILE */
+
+    @media (max-width: 600px) {
+      .container {
+        width: 91%;
+      }
+
+      nav {
+        gap: 7px;
+        padding: 9px 0 11px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-links {
+        gap: 7px 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 30px 0 24px;
+      }
+
+      .hero-grid {
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 9vw, 43px);
+        line-height: 1.12;
+      }
+
+      .hero p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .btn {
+        padding: 10px 13px;
+        font-size: 11px;
+      }
+
+      .profile-card {
+        max-width: 330px;
+        padding: 18px 14px;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+
+      .profile-card h2 {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 36px 0;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .card {
+        padding: 19px;
+      }
+
       .timeline {
-        margin: 19px 0;
+        margin: 18px 0;
         padding-left: 18px;
       }
 
-      .timeline h3 {
-        font-size: 16px;
-      }
-
-      .timeline p {
-        font-size: 13px;
-      }
-
       .resume-box {
-        padding: 21px;
-      }
-
-      #contact .section-intro {
-        font-size: 13px;
-      }
-
-      .contact-box {
-        padding: 19px;
+        padding: 20px;
       }
 
       #contact form {
         gap: 8px;
         margin-top: 13px;
-      }
-
-      #contact label {
-        font-size: 13px;
       }
 
       #contact input,
@@ -754,20 +778,12 @@
       }
 
       #contact textarea {
-        min-height: 100px;
+        min-height: 95px;
       }
 
       .contact-links {
         gap: 8px;
         margin-top: 15px;
-      }
-
-      .contact-links .btn {
-        padding: 9px 12px;
-      }
-
-      .note {
-        font-size: 11px;
       }
 
       footer {
@@ -782,33 +798,6 @@
         bottom: 13px;
       }
     }
-
-    /* SMALL PHONES */
-
-    @media (max-width: 380px) {
-      .nav-links {
-        gap: 8px 11px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .buttons .btn {
-        padding: 9px 11px;
-        font-size: 11px;
-      }
-
-      .card {
-        padding: 17px;
-      }
-    }
-
-    /* REDUCED MOTION */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -828,7 +817,6 @@
         transform: none;
       }
     }
-
   </style>
 </head>
 
@@ -836,14 +824,9 @@
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- HEADER -->
-
   <header>
     <nav class="container">
-
-      <a class="logo" href="#home">
-        Amzad<span>.</span>
-      </a>
+      <a class="logo" href="#home">Amzad<span>.</span></a>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -853,7 +836,6 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
-
     </nav>
   </header>
 
@@ -862,11 +844,9 @@
     <!-- HOME -->
 
     <section class="hero" id="home">
-
       <div class="container hero-grid">
 
         <div class="hero-content">
-
           <div class="eyebrow">HELLO, I'M AMZAD ALI</div>
 
           <h1>
@@ -880,21 +860,12 @@
           </p>
 
           <div class="buttons">
-
-            <a class="btn primary" href="#projects">
-              Explore My Projects
-            </a>
-
-            <a class="btn" href="#contact">
-              Send Me a Message
-            </a>
-
+            <a class="btn primary" href="#projects">Explore My Projects</a>
+            <a class="btn" href="#contact">Send Me a Message</a>
           </div>
-
         </div>
 
         <div class="profile-card">
-
           <img
             src="amzad.2dp-Photoroom.png"
             alt="Amzad Ali"
@@ -902,31 +873,22 @@
           >
 
           <h2>Amzad Ali</h2>
-
           <p>Data Analytics | Python | SQL | Power BI</p>
-
           <p>Lucknow, Uttar Pradesh, India</p>
-
           <p>Open to entry-level opportunities</p>
-
         </div>
 
       </div>
-
     </section>
 
     <!-- ABOUT -->
 
     <section id="about">
-
       <div class="container reveal">
-
         <div class="section-label">ABOUT ME</div>
-
         <h2>A Little About My Journey</h2>
 
         <div class="section-intro">
-
           <p>
             I am currently pursuing my B.Tech in Computer Science Engineering
             from Dr. A.P.J. Abdul Kalam Technical University, Lucknow, and I
@@ -939,27 +901,19 @@
             skills through hands-on analytics projects and continuous learning.
             My long-term goal is to grow into a Data Scientist.
           </p>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- SKILLS -->
 
     <section id="skills">
-
       <div class="container reveal">
-
         <div class="section-label">MY TOOLKIT</div>
-
         <h2>Skills & Technologies</h2>
-
         <p>Tools I practise for data analysis and visualization.</p>
 
         <div class="skills">
-
           <span class="skill">Python</span>
           <span class="skill">SQL</span>
           <span class="skill">Microsoft Excel</span>
@@ -970,21 +924,15 @@
           <span class="skill">Exploratory Data Analysis</span>
           <span class="skill">Data Visualization</span>
           <span class="skill">Data Cleaning</span>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- PROJECTS -->
 
     <section id="projects">
-
       <div class="container reveal">
-
         <div class="section-label">MY WORK</div>
-
         <h2>Featured Projects</h2>
 
         <p class="section-intro">
@@ -995,9 +943,7 @@
         <div class="cards">
 
           <article class="card">
-
             <span class="tag">POWER BI · HR ANALYTICS</span>
-
             <h3>HR Analytics Dashboard</h3>
 
             <p>
@@ -1006,23 +952,15 @@
             </p>
 
             <div class="project-links">
-
-              <a
-                href="https://github.com/amzad-ali77"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">
                 GitHub Profile ↗
               </a>
-
             </div>
-
           </article>
 
           <article class="card">
-
             <span class="tag">POWER BI · SALES</span>
-
             <h3>Superstore Sales Dashboard</h3>
 
             <p>
@@ -1031,23 +969,15 @@
             </p>
 
             <div class="project-links">
-
-              <a
-                href="https://github.com/amzad-ali77"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">
                 GitHub Profile ↗
               </a>
-
             </div>
-
           </article>
 
           <article class="card">
-
             <span class="tag">PYTHON · EDA</span>
-
             <h3>Netflix Data Analysis</h3>
 
             <p>
@@ -1056,17 +986,11 @@
             </p>
 
             <div class="project-links">
-
-              <a
-                href="https://github.com/amzad-ali77"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/amzad-ali77"
+                 target="_blank" rel="noopener">
                 GitHub Profile ↗
               </a>
-
             </div>
-
           </article>
 
         </div>
@@ -1075,65 +999,42 @@
           Replace the GitHub Profile links with direct project repository
           links when available.
         </p>
-
       </div>
-
     </section>
 
     <!-- EDUCATION -->
 
     <section id="education">
-
       <div class="container reveal">
-
         <div class="section-label">EDUCATION</div>
-
         <h2>My Education</h2>
 
         <div class="timeline">
-
           <h3>B.Tech — Computer Science Engineering</h3>
-
           <p>Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
-
           <p>Currently pursuing · Fourth year</p>
-
         </div>
 
         <div class="timeline">
-
           <h3>Class XII (12th)</h3>
-
           <p>Bihar School Examination Board (BSEB)</p>
-
           <span class="percentage">Percentage: 62.8%</span>
-
         </div>
 
         <div class="timeline">
-
           <h3>Class X (10th)</h3>
-
           <p>Bihar School Examination Board (BSEB)</p>
-
           <span class="percentage">Percentage: 70.4%</span>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- RESUME -->
 
     <section id="resume">
-
       <div class="container reveal">
-
         <div class="contact-box resume-box">
-
           <div class="section-label">MY RESUME</div>
-
           <h2>Want to Know More?</h2>
 
           <p>
@@ -1154,21 +1055,15 @@
             Keep your PDF resume in the repository with the filename
             Amzad-Ali-Resume.pdf.
           </p>
-
         </div>
-
       </div>
-
     </section>
 
     <!-- CONTACT -->
 
     <section id="contact">
-
       <div class="container reveal">
-
         <div class="section-label">GET IN TOUCH</div>
-
         <h2>Have a Question? Send Me a Message</h2>
 
         <p class="section-intro">
@@ -1177,14 +1072,9 @@
         </p>
 
         <div class="contact-box">
-
-          <form
-            action="https://formspree.io/f/moeenaqz"
-            method="POST"
-          >
+          <form action="https://formspree.io/f/moeenaqz" method="POST">
 
             <label for="name">Your Name</label>
-
             <input
               id="name"
               name="name"
@@ -1195,7 +1085,6 @@
             >
 
             <label for="email">Your Email</label>
-
             <input
               id="email"
               name="email"
@@ -1206,7 +1095,6 @@
             >
 
             <label for="subject">Subject</label>
-
             <input
               id="subject"
               name="subject"
@@ -1216,7 +1104,6 @@
             >
 
             <label for="message">Your Message</label>
-
             <textarea
               id="message"
               name="message"
@@ -1228,7 +1115,6 @@
             <button class="btn primary" type="submit">
               Send Message
             </button>
-
           </form>
 
           <p class="note">
@@ -1236,49 +1122,32 @@
           </p>
 
           <div class="contact-links">
-
-            <a
-              class="btn"
-              href="https://github.com/amzad-ali77"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn"
+               href="https://github.com/amzad-ali77"
+               target="_blank" rel="noopener">
               GitHub ↗
             </a>
 
-            <a
-              class="btn"
-              href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn"
+               href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
+               target="_blank" rel="noopener">
               LinkedIn ↗
             </a>
 
-            <a
-              class="btn"
-              href="https://www.instagram.com/amzad__ali07/"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn"
+               href="https://www.instagram.com/amzad__ali07/"
+               target="_blank" rel="noopener">
               Instagram ↗
             </a>
 
-            <a
-              class="btn"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="btn"
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
+               target="_blank" rel="noopener">
               Email Me ↗
             </a>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
 
   </main>
@@ -1286,51 +1155,31 @@
   <!-- FOOTER -->
 
   <footer>
-
     <div class="container">
       © <span id="year"></span> Amzad Ali · Personal Portfolio
     </div>
-
   </footer>
 
   <!-- BACK TO TOP -->
 
-  <button id="backToTop" aria-label="Back to top">
-    ↑
-  </button>
-
-  <!-- JAVASCRIPT -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <script>
-
     // Automatic current year
-
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-
     // Scroll reveal animation
-
-    const revealElements = document.querySelectorAll(
-      ".reveal, .skill"
-    );
+    const revealElements = document.querySelectorAll(".reveal, .skill");
 
     if ("IntersectionObserver" in window) {
-
       const observer = new IntersectionObserver((entries) => {
-
         entries.forEach((entry) => {
-
           if (entry.isIntersecting) {
-
             entry.target.classList.add("show");
-
             observer.unobserve(entry.target);
-
           }
-
         });
-
       }, {
         threshold: 0.08,
         rootMargin: "0px 0px -25px 0px"
@@ -1339,26 +1188,19 @@
       revealElements.forEach((element) => {
         observer.observe(element);
       });
-
     } else {
-
       revealElements.forEach((element) => {
         element.classList.add("show");
       });
-
     }
 
-
     // Scroll progress and back to top
-
     const progress = document.getElementById("scrollProgress");
-
     const backToTop = document.getElementById("backToTop");
 
     let scrollTicking = false;
 
     function updateScroll() {
-
       const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
 
@@ -1369,75 +1211,45 @@
       progress.style.width = percentage + "%";
 
       if (window.scrollY > 300) {
-
         backToTop.classList.add("visible");
-
       } else {
-
         backToTop.classList.remove("visible");
-
       }
 
       scrollTicking = false;
-
     }
 
     window.addEventListener("scroll", () => {
-
       if (!scrollTicking) {
-
         window.requestAnimationFrame(updateScroll);
-
         scrollTicking = true;
-
       }
-
     }, { passive: true });
 
-
     // Back to top
-
     backToTop.addEventListener("click", () => {
-
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
-
     });
 
-
     // Active navigation link
-
-    const pageSections = document.querySelectorAll(
-      "main section[id]"
-    );
-
-    const navLinks = document.querySelectorAll(
-      ".nav-links a"
-    );
+    const pageSections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
     if ("IntersectionObserver" in window) {
-
       const sectionObserver = new IntersectionObserver((entries) => {
-
         entries.forEach((entry) => {
-
           if (entry.isIntersecting) {
-
             navLinks.forEach((link) => {
-
               link.classList.toggle(
                 "active",
                 link.getAttribute("href") === "#" + entry.target.id
               );
-
             });
-
           }
-
         });
-
       }, {
         rootMargin: "-30% 0px -60% 0px"
       });
@@ -1445,9 +1257,7 @@
       pageSections.forEach((section) => {
         sectionObserver.observe(section);
       });
-
     }
-
   </script>
 
 </body>
