@@ -2,17 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Amzad Ali's Data Analyst portfolio, skills, projects and contact information.">
   <meta name="google-site-verification" content="aVXDwkZe2Mz5tTTRbJU0vCWvxomBjVLxctSIGAJxX7w">
-
   <meta name="theme-color" content="#090817">
-    <link rel="icon" type="image/png" href="favicon.png">
-  <title>Amzad Ali | Data Analyst Portfolio</title>
 
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Amzad Ali | Data Analyst Portfolio</title>
 
   <style>
     :root {
@@ -35,7 +34,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 85px;
     }
 
     body {
@@ -45,7 +44,7 @@
         var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
@@ -60,6 +59,7 @@
     }
 
     /* SCROLL PROGRESS */
+
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -71,17 +71,18 @@
     }
 
     /* HEADER */
+
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9,8,23,.88);
+      background: rgba(9,8,23,.94);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(18px);
     }
 
     nav {
-      min-height: 75px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -92,6 +93,7 @@
       font-size: 25px;
       font-weight: 900;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .logo span,
@@ -102,7 +104,7 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 21px;
     }
 
     .nav-links a {
@@ -115,7 +117,7 @@
     .nav-links a::after {
       content: "";
       position: absolute;
-      bottom: -7px;
+      bottom: -6px;
       left: 0;
       width: 0;
       height: 2px;
@@ -134,8 +136,9 @@
     }
 
     /* GENERAL SECTIONS */
+
     section {
-      padding: 95px 0;
+      padding: 72px 0;
       scroll-margin-top: 75px;
       position: relative;
     }
@@ -145,23 +148,24 @@
       font-weight: 800;
       letter-spacing: 3px;
       font-size: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
 
     h1 {
-      font-size: clamp(42px, 6vw, 72px);
+      font-size: clamp(40px, 6vw, 68px);
       line-height: 1.12;
-      margin: 18px 0;
+      margin: 15px 0;
     }
 
     h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(27px, 4vw, 38px);
       line-height: 1.25;
-      margin: 12px 0 20px;
+      margin: 10px 0 17px;
     }
 
     h3 {
-      margin-bottom: 12px;
+      margin-bottom: 9px;
+      line-height: 1.4;
     }
 
     p {
@@ -170,22 +174,23 @@
 
     .section-intro {
       max-width: 720px;
-      margin-bottom: 30px;
+      margin-bottom: 23px;
     }
 
     /* HERO */
+
     .hero {
-      min-height: 88vh;
+      min-height: 75vh;
       display: flex;
       align-items: center;
-      padding: 80px 0;
+      padding: 55px 0;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr;
       align-items: center;
-      gap: 55px;
+      gap: 45px;
     }
 
     .eyebrow {
@@ -204,7 +209,7 @@
 
     .hero p {
       max-width: 620px;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .buttons,
@@ -212,22 +217,23 @@
     .project-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 27px;
+      gap: 11px;
+      margin-top: 22px;
     }
 
     /* BUTTONS */
+
     .btn {
       display: inline-block;
       border: 1px solid var(--gold);
-      border-radius: 10px;
-      padding: 12px 19px;
+      border-radius: 9px;
+      padding: 11px 18px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--gold);
       background: transparent;
       cursor: pointer;
-      transition: .35s ease;
+      transition: .3s ease;
     }
 
     .btn.primary {
@@ -237,16 +243,17 @@
     }
 
     .btn:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 10px 28px rgba(226,193,123,.2);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(226,193,123,.2);
     }
 
     /* PROFILE */
+
     .profile-card {
-      padding: 32px 25px;
+      padding: 27px 22px;
       background: linear-gradient(145deg, #211a3e, #121025);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 22px;
       text-align: center;
       box-shadow: var(--shadow);
       animation: floatCard 4s ease-in-out infinite;
@@ -255,53 +262,58 @@
 
     .profile-card:hover {
       border-color: var(--gold);
-      box-shadow: 0 20px 55px rgba(197,163,255,.15);
+      box-shadow: 0 20px 45px rgba(197,163,255,.15);
     }
 
     .avatar {
-      width: 145px;
-      height: 145px;
+      width: 135px;
+      height: 135px;
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--gold);
-      box-shadow: 0 0 28px rgba(226,193,123,.2);
+      box-shadow: 0 0 25px rgba(226,193,123,.2);
+    }
+
+    .profile-card h2 {
+      margin: 8px 0;
     }
 
     .profile-card p {
-      margin: 6px 0;
-      font-size: 14px;
+      margin: 5px 0;
+      font-size: 13px;
     }
 
     @keyframes floatCard {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-7px); }
     }
 
     /* CARDS */
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
+      gap: 19px;
+      margin-top: 24px;
     }
 
     .card,
     .contact-box {
-      padding: 28px;
+      padding: 25px;
       background: linear-gradient(145deg, var(--panel2), var(--panel));
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 17px;
       box-shadow: var(--shadow);
-      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
     }
 
     .card:hover,
     .contact-box:hover {
-      transform: translateY(-9px);
+      transform: translateY(-6px);
       border-color: var(--gold);
-      box-shadow: 0 18px 45px rgba(197,163,255,.12);
+      box-shadow: 0 15px 35px rgba(197,163,255,.12);
     }
 
     .card p {
@@ -312,14 +324,14 @@
       display: inline-block;
       color: var(--gold);
       font-size: 11px;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
+      letter-spacing: 1.3px;
+      margin-bottom: 12px;
       font-weight: bold;
     }
 
     .project-links a {
       color: var(--gold);
-      font-size: 14px;
+      font-size: 13px;
       transition: .3s;
     }
 
@@ -328,36 +340,39 @@
     }
 
     /* SKILLS */
+
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
+      gap: 11px;
+      margin-top: 22px;
     }
 
     .skill {
-      padding: 11px 18px;
+      padding: 9px 16px;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: .35s;
+      border-radius: 9px;
+      transition: .3s;
       color: var(--text);
+      font-size: 14px;
     }
 
     .skill:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       color: var(--gold);
       border-color: var(--gold);
-      box-shadow: 0 8px 25px rgba(226,193,123,.12);
+      box-shadow: 0 8px 20px rgba(226,193,123,.12);
     }
 
     /* EDUCATION */
+
     .timeline {
       border-left: 2px solid var(--gold);
-      padding: 5px 0 8px 25px;
-      margin: 28px 0;
+      padding: 4px 0 5px 23px;
+      margin: 23px 0;
       position: relative;
-      transition: .4s;
+      transition: .3s;
     }
 
     .timeline::before {
@@ -373,46 +388,60 @@
     }
 
     .timeline:hover {
-      transform: translateX(9px);
+      transform: translateX(5px);
     }
 
     .timeline p {
-      margin: 5px 0;
+      margin: 4px 0;
+      font-size: 14px;
     }
 
     .percentage {
       display: inline-block;
-      margin-top: 8px;
-      padding: 5px 13px;
+      margin-top: 7px;
+      padding: 4px 12px;
       border: 1px solid var(--gold);
-      border-radius: 8px;
+      border-radius: 7px;
       color: var(--gold);
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    /* CONTACT FORM */
+    /* RESUME */
+
+    .resume-box {
+      padding: 27px;
+    }
+
+    .resume-box .btn {
+      margin-top: 17px;
+    }
+
+    /* CONTACT */
+
     #contact form {
       display: grid;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     #contact label {
       color: var(--text);
       font-weight: 600;
-      margin-top: 8px;
+      font-size: 14px;
+      margin-top: 5px;
     }
 
     #contact input,
     #contact textarea {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       border-radius: 9px;
       border: 1px solid var(--border);
       background: #0d0b1c;
       color: var(--text);
       font: inherit;
+      font-size: 14px;
       transition: .3s;
     }
 
@@ -425,62 +454,47 @@
 
     #contact textarea {
       resize: vertical;
+      min-height: 120px;
     }
 
     #contact button {
       justify-self: start;
-      margin-top: 12px;
+      margin-top: 8px;
     }
 
     .note {
-      font-size: 13px;
-      margin-top: 15px;
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    .contact-links {
+      margin-top: 20px;
     }
 
     /* REVEAL ANIMATIONS */
+
     .reveal {
       opacity: 0;
-      transform: translateY(65px) scale(.97);
-      filter: blur(5px);
-      transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.8,.2,1),
-        filter .9s ease;
+      transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
     }
 
     .reveal.show {
       opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
+      transform: translateY(0);
     }
 
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-75px);
-      filter: blur(4px);
-      transition: .9s cubic-bezier(.2,.8,.2,1);
+    .card:nth-child(2) {
+      transition-delay: .1s;
     }
 
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(75px);
-      filter: blur(4px);
-      transition: .9s cubic-bezier(.2,.8,.2,1);
+    .card:nth-child(3) {
+      transition-delay: .18s;
     }
-
-    .reveal-left.show,
-    .reveal-right.show {
-      opacity: 1;
-      transform: translateX(0);
-      filter: blur(0);
-    }
-
-    .card:nth-child(2) { transition-delay: .12s; }
-    .card:nth-child(3) { transition-delay: .24s; }
 
     .skill {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(12px);
     }
 
     .skill.show {
@@ -489,30 +503,32 @@
     }
 
     /* FOOTER */
+
     footer {
       border-top: 1px solid var(--border);
-      padding: 28px 0;
+      padding: 22px 0;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     /* BACK TO TOP */
+
     #backToTop {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 45px;
-      height: 45px;
+      right: 18px;
+      bottom: 18px;
+      width: 42px;
+      height: 42px;
       border: 1px solid var(--gold);
       border-radius: 50%;
       background: var(--panel2);
       color: var(--gold);
-      font-size: 22px;
+      font-size: 21px;
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(15px);
+      transform: translateY(10px);
       transition: .3s;
       z-index: 99;
     }
@@ -528,66 +544,291 @@
       color: #171023;
     }
 
-    /* MOBILE */
-    @media (max-width: 760px) {
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 15px 0;
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        gap: 25px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .nav-links {
-        gap: 12px;
+        gap: 13px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+
+      html {
+        scroll-padding-top: 125px;
+      }
+
+      .container {
+        width: 91%;
+      }
+
+      nav {
+        align-items: center;
+        flex-direction: column;
+        gap: 9px;
+        padding: 11px 0 13px;
+      }
+
+      .logo {
+        font-size: 23px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 9px 16px;
       }
 
       .nav-links a {
         font-size: 12px;
       }
 
-      .hero {
-        min-height: auto;
-        padding: 65px 0;
-      }
-
-      .hero-grid,
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 35px;
+      .nav-links a::after {
+        bottom: -3px;
       }
 
       section {
-        padding: 65px 0;
+        padding: 39px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 43px 0 35px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        font-size: clamp(35px, 9vw, 46px);
+        margin: 11px 0;
+      }
+
+      h2 {
+        font-size: 27px;
+        margin: 8px 0 13px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .buttons {
+        justify-content: center;
+        gap: 9px;
+        margin-top: 17px;
+      }
+
+      .btn {
+        padding: 10px 14px;
+        font-size: 12px;
       }
 
       .profile-card {
+        padding: 21px 17px;
         animation: none;
+        max-width: 340px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .avatar {
+        width: 115px;
+        height: 115px;
+        margin-bottom: 11px;
+      }
+
+      .profile-card h2 {
+        font-size: 24px;
+      }
+
+      .profile-card p {
+        font-size: 12px;
+      }
+
+      .section-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 7px;
+      }
+
+      .section-intro {
+        margin-bottom: 17px;
+      }
+
+      .section-intro p {
+        margin-bottom: 9px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        margin-top: 17px;
       }
 
       .card {
-        transition-delay: 0s !important;
+        padding: 20px;
+      }
+
+      .card:hover,
+      .contact-box:hover {
+        transform: translateY(-3px);
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .tag {
+        margin-bottom: 8px;
+      }
+
+      .skills {
+        gap: 8px;
+        margin-top: 17px;
+      }
+
+      .skill {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .timeline {
+        margin: 19px 0;
+        padding-left: 18px;
+      }
+
+      .timeline h3 {
+        font-size: 16px;
+      }
+
+      .timeline p {
+        font-size: 13px;
+      }
+
+      .resume-box {
+        padding: 21px;
+      }
+
+      #contact .section-intro {
+        font-size: 13px;
+      }
+
+      .contact-box {
+        padding: 19px;
+      }
+
+      #contact form {
+        gap: 8px;
+        margin-top: 13px;
+      }
+
+      #contact label {
+        font-size: 13px;
+      }
+
+      #contact input,
+      #contact textarea {
+        padding: 11px;
+        font-size: 13px;
+      }
+
+      #contact textarea {
+        min-height: 100px;
+      }
+
+      .contact-links {
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .contact-links .btn {
+        padding: 9px 12px;
+      }
+
+      .note {
+        font-size: 11px;
+      }
+
+      footer {
+        padding: 17px 0;
+        font-size: 11px;
+      }
+
+      #backToTop {
+        width: 38px;
+        height: 38px;
+        right: 13px;
+        bottom: 13px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+    /* SMALL PHONES */
 
-      *, *::before, *::after {
+    @media (max-width: 380px) {
+      .nav-links {
+        gap: 8px 11px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .buttons .btn {
+        padding: 9px 11px;
+        font-size: 11px;
+      }
+
+      .card {
+        padding: 17px;
+      }
+    }
+
+    /* REDUCED MOTION */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation: none !important;
         transition: none !important;
       }
 
       .reveal,
-      .reveal-left,
-      .reveal-right,
       .skill {
         opacity: 1;
         transform: none;
-        filter: none;
       }
     }
+
   </style>
 </head>
 
@@ -595,9 +836,14 @@
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
+  <!-- HEADER -->
+
   <header>
     <nav class="container">
-      <a class="logo" href="#home">Amzad<span>.</span></a>
+
+      <a class="logo" href="#home">
+        Amzad<span>.</span>
+      </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -607,16 +853,20 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
+
     </nav>
   </header>
 
   <main>
 
     <!-- HOME -->
+
     <section class="hero" id="home">
+
       <div class="container hero-grid">
 
         <div class="hero-content">
+
           <div class="eyebrow">HELLO, I'M AMZAD ALI</div>
 
           <h1>
@@ -630,32 +880,53 @@
           </p>
 
           <div class="buttons">
-            <a class="btn primary" href="#projects">Explore My Projects</a>
-            <a class="btn" href="#contact">Send Me a Message</a>
+
+            <a class="btn primary" href="#projects">
+              Explore My Projects
+            </a>
+
+            <a class="btn" href="#contact">
+              Send Me a Message
+            </a>
+
           </div>
+
         </div>
 
         <div class="profile-card">
-          <img src="amzad.2dp-Photoroom.png"
-               alt="Amzad Ali"
-               class="avatar">
+
+          <img
+            src="amzad.2dp-Photoroom.png"
+            alt="Amzad Ali"
+            class="avatar"
+          >
 
           <h2>Amzad Ali</h2>
+
           <p>Data Analytics | Python | SQL | Power BI</p>
+
           <p>Lucknow, Uttar Pradesh, India</p>
+
           <p>Open to entry-level opportunities</p>
+
         </div>
 
       </div>
+
     </section>
 
     <!-- ABOUT -->
+
     <section id="about">
+
       <div class="container reveal">
+
         <div class="section-label">ABOUT ME</div>
+
         <h2>A Little About My Journey</h2>
 
         <div class="section-intro">
+
           <p>
             I am currently pursuing my B.Tech in Computer Science Engineering
             from Dr. A.P.J. Abdul Kalam Technical University, Lucknow, and I
@@ -668,18 +939,27 @@
             skills through hands-on analytics projects and continuous learning.
             My long-term goal is to grow into a Data Scientist.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- SKILLS -->
+
     <section id="skills">
+
       <div class="container reveal">
+
         <div class="section-label">MY TOOLKIT</div>
+
         <h2>Skills & Technologies</h2>
+
         <p>Tools I practise for data analysis and visualization.</p>
 
         <div class="skills">
+
           <span class="skill">Python</span>
           <span class="skill">SQL</span>
           <span class="skill">Microsoft Excel</span>
@@ -690,14 +970,21 @@
           <span class="skill">Exploratory Data Analysis</span>
           <span class="skill">Data Visualization</span>
           <span class="skill">Data Cleaning</span>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- PROJECTS -->
+
     <section id="projects">
+
       <div class="container reveal">
+
         <div class="section-label">MY WORK</div>
+
         <h2>Featured Projects</h2>
 
         <p class="section-intro">
@@ -708,84 +995,145 @@
         <div class="cards">
 
           <article class="card">
+
             <span class="tag">POWER BI · HR ANALYTICS</span>
+
             <h3>HR Analytics Dashboard</h3>
+
             <p>
               An interactive dashboard exploring employee headcount,
               attrition rate, active employees, and workforce trends.
             </p>
+
             <div class="project-links">
-              <a href="https://github.com/amzad-ali77"
-                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+
+              <a
+                href="https://github.com/amzad-ali77"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub Profile ↗
+              </a>
+
             </div>
+
           </article>
 
           <article class="card">
+
             <span class="tag">POWER BI · SALES</span>
+
             <h3>Superstore Sales Dashboard</h3>
+
             <p>
               Sales performance analysis across products, regions,
               categories, profit, and shipping methods.
             </p>
+
             <div class="project-links">
-              <a href="https://github.com/amzad-ali77"
-                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+
+              <a
+                href="https://github.com/amzad-ali77"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub Profile ↗
+              </a>
+
             </div>
+
           </article>
 
           <article class="card">
+
             <span class="tag">PYTHON · EDA</span>
+
             <h3>Netflix Data Analysis</h3>
+
             <p>
               Exploratory data analysis using Python, Pandas, NumPy,
               and Matplotlib to explore content trends.
             </p>
+
             <div class="project-links">
-              <a href="https://github.com/amzad-ali77"
-                 target="_blank" rel="noopener">GitHub Profile ↗</a>
+
+              <a
+                href="https://github.com/amzad-ali77"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub Profile ↗
+              </a>
+
             </div>
+
           </article>
 
         </div>
 
         <p class="note">
-          Replace the GitHub Profile links above with the direct links to
-          each project's repository when available.
+          Replace the GitHub Profile links with direct project repository
+          links when available.
         </p>
+
       </div>
+
     </section>
 
     <!-- EDUCATION -->
+
     <section id="education">
+
       <div class="container reveal">
+
         <div class="section-label">EDUCATION</div>
+
         <h2>My Education</h2>
 
         <div class="timeline">
+
           <h3>B.Tech — Computer Science Engineering</h3>
+
           <p>Dr. A.P.J. Abdul Kalam Technical University, Lucknow</p>
+
           <p>Currently pursuing · Fourth year</p>
+
         </div>
 
         <div class="timeline">
+
           <h3>Class XII (12th)</h3>
+
           <p>Bihar School Examination Board (BSEB)</p>
+
           <span class="percentage">Percentage: 62.8%</span>
+
         </div>
 
         <div class="timeline">
+
           <h3>Class X (10th)</h3>
+
           <p>Bihar School Examination Board (BSEB)</p>
+
           <span class="percentage">Percentage: 70.4%</span>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- RESUME -->
+
     <section id="resume">
+
       <div class="container reveal">
-        <div class="contact-box">
+
+        <div class="contact-box resume-box">
+
           <div class="section-label">MY RESUME</div>
+
           <h2>Want to Know More?</h2>
 
           <p>
@@ -793,25 +1141,34 @@
             skills, projects, and experience.
           </p>
 
-          <a class="btn primary"
-   href="/amzad-portfolio/Amzad-Ali-Resume.pdf"
-   target="_blank"
-   rel="noopener">
-   View / Download Resume
-</a>
-        
+          <a
+            class="btn primary"
+            href="/amzad-portfolio/Amzad-Ali-Resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            View / Download Resume
+          </a>
+
           <p class="note">
-            Keep your PDF resume in this repository with the filename
+            Keep your PDF resume in the repository with the filename
             Amzad-Ali-Resume.pdf.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
     <!-- CONTACT -->
+
     <section id="contact">
+
       <div class="container reveal">
+
         <div class="section-label">GET IN TOUCH</div>
+
         <h2>Have a Question? Send Me a Message</h2>
 
         <p class="section-intro">
@@ -821,9 +1178,13 @@
 
         <div class="contact-box">
 
-         <form action="https://formspree.io/f/moeenaqz" method="POST">
+          <form
+            action="https://formspree.io/f/moeenaqz"
+            method="POST"
+          >
 
             <label for="name">Your Name</label>
+
             <input
               id="name"
               name="name"
@@ -834,6 +1195,7 @@
             >
 
             <label for="email">Your Email</label>
+
             <input
               id="email"
               name="email"
@@ -844,6 +1206,7 @@
             >
 
             <label for="subject">Subject</label>
+
             <input
               id="subject"
               name="subject"
@@ -853,10 +1216,11 @@
             >
 
             <label for="message">Your Message</label>
+
             <textarea
               id="message"
               name="message"
-              rows="6"
+              rows="5"
               placeholder="Write your message here..."
               required
             ></textarea>
@@ -873,71 +1237,128 @@
 
           <div class="contact-links">
 
-            <a class="btn"
-               href="https://github.com/amzad-ali77"
-               target="_blank"
-               rel="noopener">GitHub ↗</a>
+            <a
+              class="btn"
+              href="https://github.com/amzad-ali77"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub ↗
+            </a>
 
-            <a class="btn"
-               href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
-               target="_blank"
-               rel="noopener">LinkedIn ↗</a>
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/amzad-ali-9003b8329/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn ↗
+            </a>
 
-            <a class="btn"
-               href="https://www.instagram.com/amzad__ali07/"
-               target="_blank"
-               rel="noopener">Instagram ↗</a>
+            <a
+              class="btn"
+              href="https://www.instagram.com/amzad__ali07/"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram ↗
+            </a>
 
-            <a class="btn"
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
-               target="_blank"
-               rel="noopener">Email Me ↗</a>
+            <a
+              class="btn"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=amzadraza776@gmail.com"
+              target="_blank"
+              rel="noopener"
+            >
+              Email Me ↗
+            </a>
 
           </div>
+
         </div>
+
       </div>
+
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container">
       © <span id="year"></span> Amzad Ali · Personal Portfolio
     </div>
+
   </footer>
 
-  <button id="backToTop" aria-label="Back to top">↑</button>
+  <!-- BACK TO TOP -->
+
+  <button id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
+
+  <!-- JAVASCRIPT -->
 
   <script>
+
     // Automatic current year
+
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
+
     // Scroll reveal animation
+
     const revealElements = document.querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right, .skill"
+      ".reveal, .skill"
     );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+    if ("IntersectionObserver" in window) {
+
+      const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -25px 0px"
       });
-    }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -45px 0px"
-    });
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
 
-    // Scroll progress bar and back to top
+    } else {
+
+      revealElements.forEach((element) => {
+        element.classList.add("show");
+      });
+
+    }
+
+
+    // Scroll progress and back to top
+
     const progress = document.getElementById("scrollProgress");
+
     const backToTop = document.getElementById("backToTop");
 
-    window.addEventListener("scroll", () => {
+    let scrollTicking = false;
+
+    function updateScroll() {
+
       const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
 
@@ -947,43 +1368,86 @@
 
       progress.style.width = percentage + "%";
 
-      if (window.scrollY > 400) {
-        backToTop.classList.add("visible");
-      } else {
-        backToTop.classList.remove("visible");
-      }
-    });
+      if (window.scrollY > 300) {
 
-    // Back to top click
+        backToTop.classList.add("visible");
+
+      } else {
+
+        backToTop.classList.remove("visible");
+
+      }
+
+      scrollTicking = false;
+
+    }
+
+    window.addEventListener("scroll", () => {
+
+      if (!scrollTicking) {
+
+        window.requestAnimationFrame(updateScroll);
+
+        scrollTicking = true;
+
+      }
+
+    }, { passive: true });
+
+
+    // Back to top
+
     backToTop.addEventListener("click", () => {
+
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
+
     });
 
-    // Highlight active navigation link
-    const pageSections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll(".nav-links a");
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === "#" + entry.target.id
-            );
-          });
-        }
+    // Active navigation link
+
+    const pageSections = document.querySelectorAll(
+      "main section[id]"
+    );
+
+    const navLinks = document.querySelectorAll(
+      ".nav-links a"
+    );
+
+    if ("IntersectionObserver" in window) {
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            navLinks.forEach((link) => {
+
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + entry.target.id
+              );
+
+            });
+
+          }
+
+        });
+
+      }, {
+        rootMargin: "-30% 0px -60% 0px"
       });
-    }, {
-      rootMargin: "-35% 0px -55% 0px"
-    });
 
-    pageSections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
+      pageSections.forEach((section) => {
+        sectionObserver.observe(section);
+      });
+
+    }
+
   </script>
 
 </body>
